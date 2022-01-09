@@ -2,17 +2,17 @@
 
 - Get test ether from goerli faucet. https://faucet.goerli.mudit.blog/
 
-- Make API key to goerli testnet. (Can use Alchemy or any other RPC provider)
+- Get a goerli testnet API key. (Can use Alchemy or any other RPC provider)
 
-- `npm init -y`
+- `git clone "https://github.com/misirov/FlashBots.git"`
 
-- `npm install --save ethers`
+- `npm install`
 
-- `npm install --save @flashbots/ethers-provider-bundle`
+make sure to change the ALCHEMT_API and PRIVATE_KEY to your own as well as having some test goerli on your wallet.  
 
-- make sure 
+- `npx FlashbotsTest.js`
+
 
 
 More info @:
-
 https://docs.flashbots.net/flashbots-auction/searchers/advanced/goerli-testnet
