@@ -12,7 +12,7 @@ const FLASHBOTS_ENDPOINT = "https://relay-goerli.flashbots.net";
 // Alchemy Goerli API
 const provider = new providers.JsonRpcProvider(process.env.ALCHEMY_GOERLI_API);
 
-// Create new wallet with out private key and the rpc provider
+// Create new wallet with private key and the rpc provider
 const wallet = new Wallet(process.env.PRIVATE_KEY, provider);
 
 
@@ -61,7 +61,7 @@ async function main() {
       console.log(`--> Simulation error: ${simulation.error.message}`);
     } else {
       console.log(`--> Simulation success`);
-    }
+    };
     
 
     // Submit Bundle
@@ -69,10 +69,10 @@ async function main() {
     console.log('Bundle submitted. Waiting...\n');
     if ("error" in bundleSubmission) {
       throw new Error(bundleSubmission.error.message);
-    }
+    };
 
 
-    // Wait for response. If Bundle is not included try again targeting next block. Else print transaction and exit(0)
+    // Wait for response. If Bundle is not included try again targeting next block. Else print tx and exit(0)
     const response = await bundleSubmission.wait();
     console.log(`--> Received response: ${FlashbotsBundleResolution[response]}`)
     if (response === FlashbotsBundleResolution.BundleIncluded) {
@@ -82,8 +82,7 @@ async function main() {
     
     } else if (response === FlashbotsBundleResolution.BlockPassedWithoutInclusion || response === FlashbotsBundleResolution.AccountNonceTooHigh) {
       console.log(`> Bundle not included in ${targetBlock}`);
-    
-    } 
+    }; 
   
   });
 }
