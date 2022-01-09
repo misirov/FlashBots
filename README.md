@@ -5,6 +5,8 @@
 - @flashbots/ethers-provider-bundle
 
 
+### Test it!
+
 - Get test ether from goerli faucet. https://faucet.goerli.mudit.blog/
 
 - Get a goerli testnet API key. (Can use Alchemy or any other RPC provider)
